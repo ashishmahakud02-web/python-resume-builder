@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResumeCraft | Build Your Resume</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-dark px-4 py-3">
+    <a class="navbar-brand fw-bold" href="/">📄 ResumeCraft</a>
+    <span class="text-white">Free Resume Builder</span>
+</nav>
+
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h1 class="fw-bold">Build Your Professional Resume</h1>
+        <p class="text-muted">Create, preview and download your resume in minutes.</p>
+    </div>
+
+    <form action="/preview" method="POST" class="resume-form">
+
+        <h4>👤 Personal Information</h4>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label>Full Name *</label>
+                <input type="text" name="name" class="form-control" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label>Professional Title</label>
+                <input type="text" name="title" class="form-control" placeholder="Computer Science Student">
+            </div>
+            <div class="col-md-6 mb-3">
+                <label>Email</label>
+                <input type="email" name="email" class="form-control">
+            </div>
+            <div class="col-md-6 mb-3">
+                <label>Phone</label>
+                <input type="tel" name="phone" class="form-control">
+            </div>
+            <div class="col-md-6 mb-3">
+                <label>Location</label>
+                <input type="text" name="location" class="form-control">
+            </div>
+            <div class="col-md-6 mb-3">
+                <label>LinkedIn URL</label>
+                <input type="url" name="linkedin" class="form-control">
+            </div>
+            <div class="col-md-12 mb-3">
+                <label>GitHub / Portfolio URL</label>
+                <input type="url" name="github" class="form-control">
+            </div>
+        </div>
+
+        <hr>
+
+        <h4>📝 Professional Summary</h4>
+        <textarea name="summary" class="form-control mb-4" rows="3"
+        placeholder="Write a short professional introduction..."></textarea>
+
+        <h4>🎓 Education</h4>
+        <textarea name="education" class="form-control mb-4" rows="3"
+        placeholder="Degree, college, graduation year, CGPA..."></textarea>
+
+        <h4>💻 Technical Skills</h4>
+        <textarea name="skills" class="form-control mb-4" rows="2"
+        placeholder="Python, Java, C++, HTML, CSS, SQL..."></textarea>
+
+        <h4>🚀 Projects</h4>
+        <textarea name="projects" class="form-control mb-4" rows="4"
+        placeholder="Project name and description..."></textarea>
+
+        <h4>💼 Experience / Internship</h4>
+        <textarea name="experience" class="form-control mb-4" rows="3"
+        placeholder="Your internship or work experience..."></textarea>
+
+        <h4>🏆 Certifications & Achievements</h4>
+        <textarea name="certifications" class="form-control mb-4" rows="3"
+        placeholder="Certificates, awards and achievements..."></textarea>
+
+        <h4>🎨 Resume Design</h4>
+        <select name="template" class="form-select mb-4">
+            <option value="blue">Modern Blue</option>
+            <option value="green">Classic Green</option>
+            <option value="black">Minimal Black</option>
+        </select>
+
+        <button type="submit" class="btn btn-primary btn-lg w-100">
+            Generate My Resume →
+        </button>
+
+    </form>
+</div>
+
+<footer class="text-center py-4 text-muted">
+    Made with ❤️ using Python Flask
+</footer>
+
+</body>
+</html>
